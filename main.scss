@@ -30,7 +30,7 @@ body {
 }
 
 h1 {
-@extend .headings;
+	@extend .headings;
 	font-weight: 200;
 }
 
@@ -76,6 +76,14 @@ h3 {
 		right: 2rem;
 		bottom: 2rem;
 	}
+
+	&:hover {
+		animation: push-up 1s ease-out forwards;
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+		}
+	}
 }
 
 .card__individual--title {
@@ -107,6 +115,8 @@ h3 {
 	border-color: map-get($colors, card-calculator);
 }
 
+// FOOTER
+
 .attribution {
 	font-size: 0.7rem;
 	text-align: center;
@@ -125,17 +135,29 @@ h3 {
 	}
 }
 
-// Desktops 
+// Desktops
 
 @media (min-width: 73rem) {
 	.cards {
 		align-content: center;
 		align-items: center;
-		display: flex;		
+		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
 }
 
+// ANIMATION
 
+@keyframes push-up {
+	0% {
+		transform: translateY(0);
+	}
+	33% {
+		transform: translateY(-1.5rem);
+	}
+	100% {
+		transform: translateY(-1rem);
+	}
+}
