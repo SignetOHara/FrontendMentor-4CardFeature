@@ -105,6 +105,19 @@ h3 {
   .header-section {
     max-width: 40rem;
   }
+
+  .cards__column {
+    flex-direction: row;
+  }
+
+  .cards {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 @media (min-width: 73rem) {
   .headings, h1, h2 {
@@ -117,12 +130,12 @@ h3 {
     margin: 0.9375rem auto;
   }
 
+  .cards__column {
+    flex-direction: column;
+  }
+
   .cards {
-    align-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-wrap: nowrap;
   }
 }
 @keyframes push-up {
